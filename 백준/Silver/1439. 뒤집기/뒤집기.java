@@ -8,25 +8,19 @@ public class Main {
         String str = br.readLine();
 
         char first = str.charAt(0);
-        char currentIndex;
         int count = 0;
-//        int jump_count = 0; //뛰어넘은 단어 갯수
+        char currentIndex;
         char prevCh;
 
         for (int i = 1; i < str.length(); i++) {
             currentIndex = str.charAt(i);
-            prevCh = str.charAt(i-1);
-            if(first != currentIndex){ //전에 숫자와 같고, 첫번째와 다르다면
-                if(prevCh == currentIndex){
-//                    jump_count++;
-                    continue;
-                }
+            prevCh = str.charAt(i - 1);
+            if (first != currentIndex) { //전에 숫자와 같고, 첫번째와 다르다면
+                if (prevCh == currentIndex) continue;
                 count++;
             }
         }
 
         System.out.println(count);
-
-
     }
 }
