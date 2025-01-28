@@ -8,20 +8,18 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int T = Integer.parseInt(br.readLine());
         StringTokenizer st;
-        StringBuilder sb = new StringBuilder();
 
         for(int i=0; i<T; i++) {
-            float cal = 0;
             st = new StringTokenizer(br.readLine());
+            double cal = Double.parseDouble(st.nextToken());
+
             while(st.hasMoreTokens()) {
-                String str = st.nextToken();
-                if(str.equals("@")) cal *= 3;
-                else if(str.equals("%")) cal += 5;
-                else if(str.equals("#")) cal -= 7;
-                else cal += Float.parseFloat(str);
+                char ch = st.nextToken().charAt(0);
+                if(ch == '@') cal *= 3;
+                else if(ch == '%') cal += 5;
+                else cal -= 7;
             }
-            sb.append(String.format("%.2f", cal)).append("\n");
+            System.out.printf("%.2f\n", cal);
         }
-        System.out.println(sb);
     }
 }
