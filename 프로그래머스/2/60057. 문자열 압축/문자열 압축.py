@@ -8,7 +8,7 @@
 def solution(s):
     answer = len(s)
 
-    for split in range(1, len(s)):
+    for split in range(1, len(s) // 2 + 1):
         afterString = ""
         tmp_ch = (s[0:split])
         count = 1
